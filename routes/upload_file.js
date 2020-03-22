@@ -2,9 +2,8 @@ const express       = require('express');
 const path          = require('path')
 const app           = express()
 const multer        = require('multer')    
-const mysql         = require('mysql')
-const bodyParser    = require("body-parser");
 const db            = require('../conn/conn'); 
+const bodyParser    = require("body-parser");
 const DIR           = './uploads';
 
  
@@ -32,7 +31,7 @@ app.post('/upload_file',upload.single('file') ,function (req, res) {
         } else{
               
             console.log('file received');
-            var sql = `INSERT INTO file_uploads (name, type,size) VALUES ('${req.file.filename}','${req.file.mimetype}',${req.file.size});`;
+            var sql = `INSERT INTO file_uploads (name, type, size) VALUES ('${req.file.filename}','${req.file.mimetype}','${req.file.size});`;
       
               
             message = "Successfully! uploaded";

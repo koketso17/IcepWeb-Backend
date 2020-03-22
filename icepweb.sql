@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 21, 2020 at 08:34 AM
+-- Generation Time: Mar 17, 2020 at 11:11 PM
 -- Server version: 10.4.10-MariaDB
 -- PHP Version: 7.1.33
 
@@ -121,7 +121,29 @@ INSERT INTO `applicantinfo` (`id`, `firstname`, `lastname`, `email`, `mobileno`,
 (2, 'koketso', 'modify', 'kkooo@gmail.com', '0785522145', 'sulti', '1996111751010', 'male', 'java'),
 (3, ' lethu', 'masondo', 'home', '0998766654', 'Software Development', '7789287771899', 'Male', ' java'),
 (4, 'Victor', 'Manakana', 'vtmanakana@gmail.com', '0723569576', 'Software Development', '9710215310082', 'Male', 'Ruby'),
-(7, ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ');
+(7, ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '),
+(50, ' ', ' ', 'victor', ' ', ' ', ' ', ' ', ' '),
+(55, ' koketso', ' vcxfd', 'victor@gmail', ' ', ' ', 'manakana vict', ' ', ' ');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `daily_reports`
+--
+
+CREATE TABLE `daily_reports` (
+  `id` int(11) NOT NULL,
+  `student_no` varchar(9) NOT NULL,
+  `report` varchar(255) NOT NULL,
+  `report_date` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `daily_reports`
+--
+
+INSERT INTO `daily_reports` (`id`, `student_no`, `report`, `report_date`) VALUES
+(1, '214788780', 'did only backend', '0000-00-00');
 
 -- --------------------------------------------------------
 
@@ -162,7 +184,8 @@ INSERT INTO `register` (`id`, `first_name`, `last_name`, `phone_no`, `email`, `p
 (23, 'oop', 'mod', '0172169400', 'test44@gmail.com', '123456789'),
 (24, 'test me', 'test', '0785522146', 'testme123@gmail.com', '12345@G '),
 (26, 'ty', 'mo', '0712169400', 'tymo157@gmail.com', '12345'),
-(28, 'ty', 'mo', '0712169400', 'tymo554@gmail.com', '12345');
+(28, 'ty', 'mo', '0712169400', 'tymo554@gmail.com', '12345'),
+(29, 'kay', 'modise', '0712163004', 'kay@gmail.co.za', '12345');
 
 --
 -- Indexes for dumped tables
@@ -182,6 +205,12 @@ ALTER TABLE `applicantinfo`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `email` (`email`),
   ADD UNIQUE KEY `email_2` (`email`);
+
+--
+-- Indexes for table `daily_reports`
+--
+ALTER TABLE `daily_reports`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `file_uploads`
@@ -210,7 +239,13 @@ ALTER TABLE `admin_reg`
 -- AUTO_INCREMENT for table `applicantinfo`
 --
 ALTER TABLE `applicantinfo`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
+
+--
+-- AUTO_INCREMENT for table `daily_reports`
+--
+ALTER TABLE `daily_reports`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `file_uploads`
@@ -222,7 +257,7 @@ ALTER TABLE `file_uploads`
 -- AUTO_INCREMENT for table `register`
 --
 ALTER TABLE `register`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
