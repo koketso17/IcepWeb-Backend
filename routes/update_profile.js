@@ -3,7 +3,7 @@ const router = express.Router();
 const mysql = require('mysql');
 const  db = require('../conn/conn');
 
-//Udate profile
+//Update profile
 router.put('/update_profile',(req,res)=>{   
 
     let student = req.body;

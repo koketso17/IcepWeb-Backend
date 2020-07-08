@@ -4,7 +4,7 @@ const mysql = require('mysql');
 const router = express.Router();
 const db = require('../conn/conn');
 
-router.get('/n',function(req,res){
+router.get('/admin',function(req,res){
 
     
         var username= req.body.username;
@@ -22,7 +22,7 @@ router.get('/n',function(req,res){
             if(results[0].password == password){
                 
                 var username = req.body.username
-                db.query('select * from admin_reg where username = ?',username, function(err, results, fields){  
+                db.query('select * from admin_reg where username = ?',[username], function(err, results, fields){  
                     return res.send(results)
                 })
             }
@@ -37,7 +37,7 @@ router.get('/n',function(req,res){
             res.send({
               "code":204,
               "success":"Username does not exist"
-                });
+               });
           }
         }
     });
