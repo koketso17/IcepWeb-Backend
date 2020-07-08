@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 08, 2020 at 06:09 PM
+-- Generation Time: Jul 08, 2020 at 06:31 PM
 -- Server version: 10.4.13-MariaDB
 -- PHP Version: 7.4.7
 
@@ -120,7 +120,7 @@ INSERT INTO `applicantinfo` (`id`, `firstname`, `lastname`, `email`, `mobileno`,
 (1, 'fanie', '', 'test7@gmail.com', '0860010111', 'web and application development', '9601105944089', 'male', 'java,c,python', 0),
 (2, 'koketso', 'modify', 'kkooo@gmail.com', '0785522145', 'sulti', '1996111751010', 'male', 'java', 0),
 (3, ' lethu', 'masondo', 'home', '0998766654', 'Software Development', '7789287771899', 'Male', ' java', 0),
-(4, 'Victor', 'Manakana', 'vtmanakana@gmail.com', '0723569576', 'Software Development', '9710215310082', 'Male', 'Ruby', 0),
+(4, 'Victor', 'Manakana', 'vtmanakana@gmail.com', '0723569576', 'Software Development', '9710215310082', 'Male', 'Ruby', 1),
 (7, ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', 0),
 (50, ' ', ' ', 'victor', ' ', ' ', ' ', ' ', ' ', 0),
 (55, ' koketso', ' vcxfd', 'victor@gmail', ' ', ' ', 'manakana vict', ' ', ' ', 0);
