@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.2
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 17, 2020 at 11:11 PM
--- Server version: 10.4.10-MariaDB
--- PHP Version: 7.1.33
+-- Generation Time: Jul 08, 2020 at 06:09 PM
+-- Server version: 10.4.13-MariaDB
+-- PHP Version: 7.4.7
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -109,21 +108,22 @@ CREATE TABLE `applicantinfo` (
   `specialization` varchar(100) NOT NULL,
   `idno` varchar(13) NOT NULL,
   `gender` varchar(10) NOT NULL,
-  `proglanguages` varchar(255) NOT NULL
+  `proglanguages` varchar(255) NOT NULL,
+  `appl_status` tinyint(1) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `applicantinfo`
 --
 
-INSERT INTO `applicantinfo` (`id`, `firstname`, `lastname`, `email`, `mobileno`, `specialization`, `idno`, `gender`, `proglanguages`) VALUES
-(1, 'fanie', '', 'test7@gmail.com', '0860010111', 'web and application development', '9601105944089', 'male', 'java,c,python'),
-(2, 'koketso', 'modify', 'kkooo@gmail.com', '0785522145', 'sulti', '1996111751010', 'male', 'java'),
-(3, ' lethu', 'masondo', 'home', '0998766654', 'Software Development', '7789287771899', 'Male', ' java'),
-(4, 'Victor', 'Manakana', 'vtmanakana@gmail.com', '0723569576', 'Software Development', '9710215310082', 'Male', 'Ruby'),
-(7, ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '),
-(50, ' ', ' ', 'victor', ' ', ' ', ' ', ' ', ' '),
-(55, ' koketso', ' vcxfd', 'victor@gmail', ' ', ' ', 'manakana vict', ' ', ' ');
+INSERT INTO `applicantinfo` (`id`, `firstname`, `lastname`, `email`, `mobileno`, `specialization`, `idno`, `gender`, `proglanguages`, `appl_status`) VALUES
+(1, 'fanie', '', 'test7@gmail.com', '0860010111', 'web and application development', '9601105944089', 'male', 'java,c,python', 0),
+(2, 'koketso', 'modify', 'kkooo@gmail.com', '0785522145', 'sulti', '1996111751010', 'male', 'java', 0),
+(3, ' lethu', 'masondo', 'home', '0998766654', 'Software Development', '7789287771899', 'Male', ' java', 0),
+(4, 'Victor', 'Manakana', 'vtmanakana@gmail.com', '0723569576', 'Software Development', '9710215310082', 'Male', 'Ruby', 0),
+(7, ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', 0),
+(50, ' ', ' ', 'victor', ' ', ' ', ' ', ' ', ' ', 0),
+(55, ' koketso', ' vcxfd', 'victor@gmail', ' ', ' ', 'manakana vict', ' ', ' ', 0);
 
 -- --------------------------------------------------------
 
@@ -161,6 +161,17 @@ CREATE TABLE `file_uploads` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `projects`
+--
+
+CREATE TABLE `projects` (
+  `project_name` varchar(5000) NOT NULL,
+  `discription` varchar(5000) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `register`
 --
 
@@ -186,6 +197,16 @@ INSERT INTO `register` (`id`, `first_name`, `last_name`, `phone_no`, `email`, `p
 (26, 'ty', 'mo', '0712169400', 'tymo157@gmail.com', '12345'),
 (28, 'ty', 'mo', '0712169400', 'tymo554@gmail.com', '12345'),
 (29, 'kay', 'modise', '0712163004', 'kay@gmail.co.za', '12345');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `web_posts`
+--
+
+CREATE TABLE `web_posts` (
+  `posters` varchar(5000) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Indexes for dumped tables
